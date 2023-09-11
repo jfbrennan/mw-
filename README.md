@@ -8,8 +8,8 @@ To get started...
 
 copy this
 ```html
-<link href="https://unpkg.com/mw-@0.0.1/dist/mw-.css" rel="stylesheet">
-<script src="https://unpkg.com/mw-@0.0.1/dist/mw-.js" defer></script>
+<link href="https://unpkg.com/mw-@0.0.2/dist/mw-.css" rel="stylesheet">
+<script src="https://unpkg.com/mw-@0.0.2/dist/mw-.js" defer></script>
 ```
 paste it
 ```html
