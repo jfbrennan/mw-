@@ -1,7 +1,7 @@
 {
   "name": "materialweb",
   "description": "Material Web Freedom Version is a dependency-free single CDN bundle variation of Material Web.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/jfbrennan/mw-",
   "repository": {
     "type": "git",
