@@ -30,7 +30,7 @@ function pushNewVersion(cb) {
 
 function publishToNPM(cb) {
   const pkg = require('./package');
-  exec('npm publish --access public', function (err, stdout, stderr) {
+  exec('npm publish --access=public', function (err, stdout, stderr) {
     if (!err) {
       console.log(`Version ${pkg.version} has been successfully built and published. You can now zip /docs and deploy to AWS.`)
     }
