@@ -1,6 +1,6 @@
 <code-sample class="flex">
   <div ref="editor"><yield/></div>
-  <div if="{!opts.readonly}" ref="preview" class="mar-l-md"></div>
+  <div if="{!opts.readonly}" ref="preview" class="mar-l-xs pad-sm"></div>
   <script>
     setCursor() {
       this.editor.focus(); // To focus the ace editor
@@ -95,7 +95,19 @@
     }
     :scope:not([readonly]) [ref=editor] { min-height: 80px }
     :scope[readonly] [ref=editor] { width: 100% }
-    :scope [ref=preview] { flex-grow: 1 }
+    :scope [ref=preview] {
+      flex-grow: 1;
+      background-image: radial-gradient(#c4c7ff66 1px, #fefeff 1px);
+      background-size: 10px 10px;
+    }
+
+    @media	only screen and (-webkit-min-device-pixel-ratio: 1.3),
+    only screen and (-o-min-device-pixel-ratio: 13/10),
+    only screen and (min-resolution: 120dpi) {
+      :scope [ref=preview] {
+        background-image: radial-gradient(#c4c7ff 0.5px, #fefeff 0.5px);
+      }
+    }
 
     @media only screen and (max-width: 600px) {
       :scope { flex-direction: column }

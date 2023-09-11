@@ -10,7 +10,7 @@ table {
     & > tr { border-top: 2px solid var(--m-color-gray-3) }
 
     & th {
-      padding: var(--m-space-xs) var(--m-space-md);
+      padding: var(--mw-space-xs) var(--mw-space-md);
 
       /* Sortable columns */
       &[aria-sort] button {
@@ -18,7 +18,7 @@ table {
         display: inline-flex;
         cursor: pointer;
 
-        &::after { font-size: 0.8em; padding-left: var(--m-space-xs) }
+        &::after { font-size: 0.8em; padding-left: var(--mw-space-xs) }
       }
 
       &[aria-sort=ascending] button:after { content: '↑' }
@@ -26,9 +26,9 @@ table {
     }
   }
 
-  & th, & td { padding: var(--m-space-xs) }
+  & th, & td { padding: var(--mw-space-xs) }
 
-  & td { vertical-align: top; padding: var(--m-space-sm) var(--m-space-md) }
+  & td { vertical-align: top; padding: var(--mw-space-sm) var(--mw-space-md) }
 
   & tbody > tr {
     border-bottom: 1px solid var(--m-color-gray-3);

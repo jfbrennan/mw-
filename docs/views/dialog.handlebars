@@ -4,13 +4,19 @@
 <code-sample>
 <template>
   <dialog>
-    <h2>Title</h2>
-    <p>Put anything you want in here.</p>
-    <p>(press <kbd>Esc</kbd> to close)</p>
+    <div slot="headline">
+      Dialog title
+    </div>
+    <div slot="content">
+      Dialog content
+    </div>
+    <div slot="actions">
+      <button kind="text">Ok</button>
+    </div>
   </dialog>
 </template>
 
-<button onclick="document.querySelector('dialog').showModal()" ord="primary">Open Dialog</button>
+<button onclick="document.querySelector('dialog').showModal()" kind="filled">Open Dialog</button>
 </code-sample>
 <h2 id="api">API</h2>
 <h3 id="tag">Tag</h3>
@@ -43,7 +49,22 @@
   <tr>
     <td colspan="2"><code>close</code></td>
     <td colspan="2"><code>type="remove"</code> button</td>
-    <td colspan="6">None. See <a href="#close-button">Close button</a> for details.</td>
+    <td colspan="6">None. Required if not using actions slot. See <a href="#close-button">Close button</a> for details.</td>
+  </tr>
+  <tr>
+    <td colspan="2"><code>headline</code></td>
+    <td colspan="2">any</td>
+    <td colspan="6">any</td>
+  </tr>
+  <tr>
+    <td colspan="2"><code>content</code></td>
+    <td colspan="2">any</td>
+    <td colspan="6">any</td>
+  </tr>
+  <tr>
+    <td colspan="2"><code>actions</code></td>
+    <td colspan="2">div</td>
+    <td colspan="6">Buttons. Required if not using close slot.</td>
   </tr>
   </tbody>
 </table>
@@ -112,13 +133,13 @@
 </table>
 <h2 id="guidelines">Guidelines</h2>
 <h3 id="close-button">Close button</h3>
-<p>Dialog elements do not come with a button to close themselves, so Mdash includes style-only support for one. Add <code>&lt;button slot="close" type="remove"&gt;</code> and Mdash will style it for you, but your application must implement the click handler (e.g. calling the dialog's <code>close</code> method or removing its <code>open</code> attribute). Note that this is required only if a dialog doesn't implement any other buttons for closing. Here's a basic example:</p>
+<p>Dialog elements do not come with a button to close themselves, so Mweb includes style-only support for one. Add <code>&lt;button slot="close" type="remove"&gt;</code> and Mweb will style it for you, but your application must implement the click handler (e.g. calling the dialog's <code>close</code> method or removing its <code>open</code> attribute). Note that this is required only if a dialog doesn't implement any other buttons for closing. Here's a basic example:</p>
 <code-sample>
   <template>
     <dialog id="close-demo">
       <button onclick="document.querySelector('#close-demo').close()" slot="close" type="remove" aria-label="Closes dialog"></button>
       <p>A <code>button[slot=close][type=remove]</code> element in a dialog is assumed to be its close button and styled and positioned for you.</p>
-      <p>The app handles the click event and closes the dialog, not Mdash.</p>
+      <p>The app handles the click event and closes the dialog, not Mweb.</p>
     </dialog>
   </template>
 

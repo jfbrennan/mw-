@@ -4,10 +4,10 @@ m-row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: var(--m-space-md);
+  gap: var(--mw-space-md);
 
   & + & {
-    margin-top: var(--m-space-md);
+    margin-top: var(--mw-space-md);
   }
 
   /* Centers columns inside the row */

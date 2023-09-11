@@ -1,6 +1,6 @@
 /* Ordered and unordered base styles */
 ul, ol, dl { margin: 0 }
-ul, ol { padding-left: var(--m-space-md) }
+ul, ol { padding-left: var(--mw-space-md) }
 
 /* None type (no bullets) */
 ul[type=none] {
@@ -12,7 +12,7 @@ ul[type=none] {
 dd { margin-inline-start: 0 }
 dl {
   & > dt {
-    margin-top: var(--m-space-sm);
+    margin-top: var(--mw-space-sm);
     text-transform: uppercase;
     font-size: var(--m-font-size-min);
     font-weight: bold;
@@ -26,8 +26,19 @@ dl {
   list-style: none;
   padding-left: 0;
 
-  & > li:not(:last-of-type) {
+  & li {
+    display: flex;
+    align-items: center;
+    gap: var(--mw-space-sm);
+    padding: var(--mw-space-xs) var(--mw-space-md) var(--mw-space-xs) var(--mw-space-sm);
+
+    &[role=button]:hover {
+      cursor: pointer;
+      background-color: var(--m-color-gray-1);
+    }
+  }
+
+  &[divided] > li:not(:last-of-type) {
     border-bottom: 1px solid var(--m-color-border)
   }
 }
-

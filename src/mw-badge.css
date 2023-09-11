@@ -1,0 +1,28 @@
+/* Base styles */
+mw-badge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--mw-color-error);
+  color: var(--mw-color-on-error);
+  border-radius: var(--mw-corner-full);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+
+  /* Small dot */
+  &:not([count]), &[count=""] {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* Count */
+  &[count]:not([count=""]) {
+    min-width: var(--mw-space-sm);
+    height: var(--mw-space-sm);
+
+    &::before {
+      content: attr(count);
+      padding: 0 calc(var(--mw-space-xs) / 2);
+    }
+  }
+}

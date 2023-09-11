@@ -7,8 +7,8 @@ m-dot {
     content: '';
     width: 8px;
     height: 8px;
-    margin: var(--m-space-xs);
-    border-radius: var(--m-border-radius-full);
+    margin: var(--mw-space-xs);
+    border-radius: var(--mw-border-radius-full);
     background-color: var(--m-color-gray-4);
   }
 

@@ -1,9 +1,33 @@
 /* Base dialog styles */
 dialog {
   border: none;
-  padding: var(--m-space-lg);
-  background-color: #F5F3F7;
-  box-shadow: 0 16px 18px -3px #858585;
+  padding: var(--mw-space-md);
+  background-color: var(--mw-color-surface-container-high);
+  border-radius: var(--mw-corner-extra-large);
+  min-width: 280px;
+  max-width: 560px;
+  max-height: 80%;
+
+  &::backdrop {
+    background-color: #00000050;
+  }
+
+  /* Headline */
+  & [slot=headline] {
+    padding-bottom: var(--mw-space-sm);
+  }
+
+  /* Content */
+  & [slot=content] {
+    padding: 0;
+  }
+
+  /* Actions */
+  & [slot=actions] {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: var(--mw-space-md);
+  }
 
   /* Close button */
   & button[slot=close][type=remove] {

@@ -1,10 +1,10 @@
-<h1 class="mar-b-xs">Box</h1>
-<h2 class="txt-gray-5 mar-t-0">Static container for elevating content</h2>
-<h2 id="demo">Demo</h2>
+<h1 class="mar-b-xs">Card</h1>
+<h2 class="txt-gray-5 mar-t-0">Container for single-subject content</h2>
+<h2 id="demo">Try Me</h2>
 <code-sample>
-  <m-box>Primary content</m-box>
-  <m-box ord="secondary">Secondary content</m-box>
-  <p>Content outside a Box is considered neutral</p>
+  <mw-card kind="elevated">Elevated card</mw-card>
+  <mw-card kind="filled">Filled card</mw-card>
+  <mw-card kind="outlined">Outlined card</mw-card>
 </code-sample>
 <p>See more <a href="/examples#Boxes">examples</a></p>
 <h2 id="api">API</h2>
@@ -19,7 +19,7 @@
   </thead>
   <tbody>
   <tr>
-    <td colspan="2"><code>m-box</code></td>
+    <td colspan="2"><code>mw-card</code></td>
     <td colspan="2">Custom tag</td>
     <td colspan="6">Any</td>
   </tr>
@@ -36,13 +36,17 @@
   </thead>
   <tbody>
   <tr>
-    <td colspan="2"><code>ord</code></td>
+    <td colspan="2"><code>kind</code></td>
     <td colspan="2">
       <ul type="none">
-        <li>secondary</li>
+        <li>elevated</li>
+        <li>filled</li>
+        <li>outlined</li>
       </ul>
     </td>
-    <td colspan="6"><a href="https://en.wikipedia.org/wiki/Ordinal_numeral" target="_blank" rel="noopener">Ordinal number word</a> for describing the content's importance.</td>
+    <td colspan="6">
+      <p>Defines the kind of card it is. See <a href="https://m3.material.io/components/cards/guidelines" target="_blank">Material Cards</a> for guidelines.</p>
+    </td>
   </tr>
   </tbody>
 </table>
@@ -50,21 +54,21 @@
 <h3 id="nesting">Nesting</h3>
 <p>Although possible, Boxes of the same <code>ord</code> should not be nested inside each other. Nesting a secondary Box inside a primary Box is ok:</p>
 <code-sample>
-  <m-box>
+  <mw-card>
     <h3 class="mar-t-0">Terms of service</h3>
     <p>Boxes of the same <code>ord</code> should not be nested inside each other. Nesting a secondary Box inside a primary Box is ok. You must agree to these guidelines to continue.</p>
-    <m-box ord="secondary"><label for="agree"><input id="agree" type="checkbox"> I agree.</label></m-box>
-  </m-box>
+    <mw-card ord="secondary"><label for="agree"><input id="agree" type="checkbox"> I agree.</label></mw-card>
+  </mw-card>
 </code-sample>
 <h3 id="header-footer">Box header</h3>
 <p>Because a Box header is more tricky than it seems (compensating for default padding), it doesn't get any special styles. However, it just takes a few classes to get a nice Box header:</p>
 <code-sample>
-  <m-box class="pad-0">
+  <mw-card class="pad-0">
     <header class="pad-md bg-gray-1 brd-b">Header</header>
     <div class="pad-md">
       Content
     </div>
-  </m-box>
+  </mw-card>
 </code-sample>
 <h3 id="a11y">Accessibility</h3>
 <p>There are no accessibility recommendations for Box.</p>

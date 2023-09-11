@@ -2,7 +2,9 @@
 <h2 class="txt-gray-5 mar-t-0">Display notification counts</h2>
 <h2>Demo</h2>
 <code-sample>
-  <m-badge count="1"></m-badge>
+  <mw-badge></mw-badge>
+  <mw-badge count="1"></mw-badge>
+  <mw-badge count="999+"></mw-badge>
 </code-sample>
 <h2>API</h2>
 <h3>Tag</h3>
@@ -16,7 +18,7 @@
   </thead>
   <tbody>
   <tr>
-    <td colspan="2"><code>m-badge</code></td>
+    <td colspan="2"><code>mw-badge</code></td>
     <td colspan="2">Custom tag</td>
     <td colspan="6">Text or the count attribute</td>
   </tr>
@@ -35,7 +37,7 @@
   <tr>
     <td colspan="2"><code>count</code></td>
     <td colspan="2">Number</td>
-    <td colspan="6">A number to display. When zero or empty the badge will hide itself.</td>
+    <td colspan="6">The number to display. If empty, the small badge will be used.</td>
   </tr>
   </tbody>
 </table>

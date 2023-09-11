@@ -2,17 +2,17 @@
 m-alert {
   display: flex;
   align-items: center;
-  padding: var(--m-space-md);
+  padding: var(--mw-space-md);
   background-color: var(--m-color-gray-2);
 
-  & + & { margin-top: var(--m-space-sm) }
+  & + & { margin-top: var(--mw-space-sm) }
 
   /* Icon */
   &[icon]::before {
     content: attr(icon);
-    font-family: m-icons;
+    font-family: mw-icons;
     font-size: var(--m-font-size-lg);
-    margin-right: var(--m-space-sm);
+    margin-right: var(--mw-space-sm);
   }
 
   /* Dismiss button */

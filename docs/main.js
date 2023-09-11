@@ -8,15 +8,15 @@ const app = express();
 
 // Set some locals
 app.locals.version = pkg.version;
-app.locals.prodCdnUrl = `https://unpkg.com/m-@${pkg.version}/dist/m-`;
-app.locals.localUrl = process.env.NODE_ENV === 'development' ? '/m-' : app.locals.prodCdnUrl;
+app.locals.prodCdnUrl = `https://unpkg.com/mw-@${pkg.version}/dist/mw-`;
+app.locals.localUrl = process.env.NODE_ENV === 'development' ? '/mw-' : app.locals.prodCdnUrl;
 
 // Set up template engine
 app.engine('handlebars', handlebars()).set('view engine', 'handlebars');
 
 // Log all requests
 app.use((req, res, next) => {
-  console.log('originalUrl: %s', req.originalUrl, req.headers);
+  console.log('originalUrl: %s', req.originalUrl);
   next();
 });
 
@@ -31,5 +31,5 @@ app.get('/*', (req, res) => res.render(req.path.substr(1, req.path.length)));
 
 // Start the server
 app.listen(process.env.PORT || 3000, () => {
-  console.log(`Mdash doc site running at localhost:${process.env.PORT || 3000} with process.env.NODE_ENV=${process.env.NODE_ENV}.`)
+  console.log(`Mweb doc site running at localhost:${process.env.PORT || 3000} with process.env.NODE_ENV=${process.env.NODE_ENV}.`)
 });

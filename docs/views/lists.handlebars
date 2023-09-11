@@ -22,6 +22,11 @@
     <li class="pad-sm">Bar</li>
     <li class="pad-sm">Baz</li>
   </ol>
+  <ol type="content" divided>
+    <li class="pad-sm">Foo</li>
+    <li class="pad-sm">Bar</li>
+    <li class="pad-sm">Baz</li>
+  </ol>
 </code-sample>
 <h2>API</h2>
 <h3>Tags</h3>
@@ -139,31 +144,31 @@
 <h3 id="content">Content list type</h3>
 <p>The content list type is meant for building a vertical list of content.</p>
 <h4>Semantics and accessibility</h4>
-<p>To retain list semantics and accessibility, Mdash leverages the standard tags for content lists. Use the correct tag for the content, i.e. if order matters use <code>ol</code>, otherwise <code>ul</code>. Example:</p>
+<p>To retain list semantics and accessibility, Mweb leverages the standard tags for content lists. Use the correct tag for the content, i.e. if order matters use <code>ol</code>, otherwise <code>ul</code>. Example:</p>
 <p class="fnt-italic">Ordered, like steps in a recipe:</p>
-<ol type="content">
-  <li class="pad-xs"><span class="fnt-med txt-gray-5 inline-block" style="width: 60px">Prep</span> Cook rice the day before 🍚</li>
-  <li class="pad-xs"><span class="fnt-med txt-gray-5 inline-block" style="width: 60px">Step 1</span> Preheat wok on high heat, add 2 tbsp. oil 🔥</li>
-  <li class="pad-xs"><span class="fnt-med txt-gray-5 inline-block" style="width: 60px">Step 2</span> Chop veggies and meat 🧄🥩</li>
-  <li class="pad-xs"><span class="fnt-med txt-gray-5 inline-block" style="width: 60px">Step 3</span> Add everything to wok and stir fry 🫕</li>
-  <li class="pad-xs"><span class="fnt-med txt-gray-5 inline-block" style="width: 60px">Step 4</span> Top with fresh basil and serve 🌿</li>
+<ol type="content" divided>
+  <li role="button"><span class="fnt-med txt-gray-5 inline-block" style="width: 60px">Prep</span> Cook rice the day before 🍚</li>
+  <li role="button"><span class="fnt-med txt-gray-5 inline-block" style="width: 60px">Step 1</span> Preheat wok on high heat, add 2 tbsp. oil 🔥</li>
+  <li role="button"><span class="fnt-med txt-gray-5 inline-block" style="width: 60px">Step 2</span> Chop veggies and meat 🧄🥩</li>
+  <li role="button"><span class="fnt-med txt-gray-5 inline-block" style="width: 60px">Step 3</span> Add everything to wok and stir fry 🫕</li>
+  <li role="button"><span class="fnt-med txt-gray-5 inline-block" style="width: 60px">Step 4</span> Top with fresh basil and serve 🌿</li>
 </ol>
 <p class="fnt-italic">Unordered, like notification preferences:</p>
-<ul type="content">
-  <li class="flex justify-content-between pad-sm fnt-med">Email <input type="checkbox" is="switch" checked></li>
-  <li class="flex justify-content-between pad-sm fnt-med">SMS <input type="checkbox" is="switch" checked></li>
-  <li class="flex justify-content-between pad-sm fnt-med">Push <input type="checkbox" is="switch"></li>
+<ul type="content" divided>
+  <li class="justify-content-between fnt-med">Email <input type="checkbox" is="switch" checked></li>
+  <li class="justify-content-between fnt-med">SMS <input type="checkbox" is="switch" checked></li>
+  <li class="justify-content-between fnt-med">Push <input type="checkbox" is="switch"></li>
 </ul>
 <h4>Nesting</h4>
 <p>Content list is designed to work wherever you need it. It can be used on its own or, for example, nested in a dialog, menu, or a box like this:</p>
 <code-sample>
-  <m-box class="pad-0">
-    <ul type="content">
-      <li class="pad-xs">one</li>
-      <li class="pad-xs">two</li>
-      <li class="pad-xs">three</li>
+  <mw-card kind="outlined" class="pad-0">
+    <ul type="content" divided>
+      <li>one</li>
+      <li>two</li>
+      <li>three</li>
     </ul>
-  </m-box>
+  </mw-card>
 </code-sample>
 <h4>Alternatives</h4>
 <p>Be intentional. Not every vertical layout is a content list. Sometimes you don't need any particular component at all. In some cases you have tabular content, so use a
@@ -171,29 +176,29 @@
   <a href="rules">horizontal rules</a>, like this recreation of the GitHub sidebar:</p>
 <m-row>
   <m-col>
-    <m-box class="full-height box-sizing-border">
-      <div class="flex align-items-center fnt-med"><m-icon name="list" class="mar-r-xs"></m-icon>README.md</div>
-    </m-box>
+    <mw-card class="full-height box-sizing-border">
+      <div class="flex align-items-center fnt-med"><mw-icon name="list" class="mar-r-xs"></mw-icon>README.md</div>
+    </mw-card>
   </m-col>
   <m-col span="4" class="pad-b-lg">
     <h4 class="mar-t-0">About</h4>
     <p>The modern web's design system.</p>
     <div class="flex align-items-center">
-      <m-icon name="link" class="txt-xs mar-r-xs fnt-med"></m-icon>
+      <mw-icon name="link" class="txt-xs mar-r-xs fnt-med"></mw-icon>
       <a href="/list">m-docs.org</a>
     </div>
     <div class="flex flx-wrap gap-xs mar-t-md">
-      <m-tag>javascript</m-tag>
-      <m-tag>css</m-tag>
-      <m-tag>html</m-tag>
-      <m-tag>fun</m-tag>
-      <m-tag>custom-elements</m-tag>
-      <m-tag>standards</m-tag>
+      <mw-chip>javascript</mw-chip>
+      <mw-chip>css</mw-chip>
+      <mw-chip>html</mw-chip>
+      <mw-chip>fun</mw-chip>
+      <mw-chip>custom-elements</mw-chip>
+      <mw-chip>standards</mw-chip>
     </div>
     <hr class="mar-t-lg mar-b-lg">
     <h4>Releases</h4>
     <div class="flex align-items-center fnt-med">
-      <m-icon name="tag" class="mar-r-xs"></m-icon>
+      <mw-icon name="tag" class="mar-r-xs"></mw-icon>
       <span>31 <span class="txt-gray-5 fnt-reg">tags</span></span>
     </div>
     <hr class="mar-t-lg mar-b-lg">

@@ -6,6 +6,5 @@ module.exports = {
   plugins: [
     atImport,
     autoprefixer,
-    customProperties({preserve: false}),
   ]
 };

@@ -1,4 +1,4 @@
-class MdashAutocomplete extends HTMLElement {
+class MwebAutocomplete extends HTMLElement {
   #initialized = false;
   #boundClose;
   #input;
@@ -59,8 +59,8 @@ class MdashAutocomplete extends HTMLElement {
       let results = [];
 
       // Try function source...
-      if (MdashAutocomplete.prototype.sources[source]) {
-        const result = await MdashAutocomplete.prototype.sources[source](query, max);
+      if (MwebAutocomplete.prototype.sources[source]) {
+        const result = await MwebAutocomplete.prototype.sources[source](query, max);
 
         // Verify the original query matches current value since these are async calls
         if (result.query === this.#input.value) {
@@ -122,6 +122,6 @@ class MdashAutocomplete extends HTMLElement {
   }
 }
 
-MdashAutocomplete.prototype.sources = {};
-window.MdashAutocomplete = MdashAutocomplete;
-customElements.define('m-autocomplete', MdashAutocomplete);
+MwebAutocomplete.prototype.sources = {};
+window.MwebAutocomplete = MwebAutocomplete;
+customElements.define('m-autocomplete', MwebAutocomplete);

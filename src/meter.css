@@ -1,5 +1,5 @@
 meter {
   display: block;
   width: 100%;
-  height: var(--m-space-sm);
+  height: var(--mw-space-sm);
 }

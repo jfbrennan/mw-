@@ -3,16 +3,16 @@
     <h1>Library Comparison</h1>
     <p>Comparisons are tough. Differences in problem space, constraints, values, trade-offs, and a whole bunch of other factors come into play that make a true comparison complicated.</p>
 <!--    <p>Some UI libraries are great choices for their target framework, like those created specifically for React, but have no chance at compatibility. Others put a heavy emphasis on visual beauty - and really do achieve a beautiful UI! - but aren't concerned about size or performance. This is no surprise because there are no silver bullets in software - only trade-offs.</p>-->
-    <p>Mdash hits the sweet spot of minimal trade-offs and maximum value by relentlessly leveraging standards and offers developers a UI library that is extremely small and compatible, truly easy (no install, no config, no build step), more familiar, and is sophisticated enough to serve as a shared design system across large organizations.</p>
-    <p>So, although not every UI library has all the same components, those that have matches with Mdash have their markup lined up below to compare.</p>
+    <p>Mweb hits the sweet spot of minimal trade-offs and maximum value by relentlessly leveraging standards and offers developers a UI library that is extremely small and compatible, truly easy (no install, no config, no build step), more familiar, and is sophisticated enough to serve as a shared design system across large organizations.</p>
+    <p>So, although not every UI library has all the same components, those that have matches with Mweb have their markup lined up below to compare.</p>
     <small><a href="https://github.com/jfbrennan/m-/issues">Submit corrections</a></small>
   </div>
-  <m-tabs id="comparisons" class="mar-t-lg">
-    <m-tab id="bootstrap">Bootstrap vs. Mdash</m-tab>
-    <m-tab id="material-web">Material Web vs. Mdash</m-tab>
-    <m-tab id="foundation">Foundation vs. Mdash</m-tab>
+  <mw-tabs id="comparisons" class="mar-t-lg">
+    <m-tab id="bootstrap">Bootstrap vs. Mweb</m-tab>
+    <m-tab id="material-web">Material Web vs. Mweb</m-tab>
+    <m-tab id="foundation">Foundation vs. Mweb</m-tab>
     <m-tab id="semantic-ui" disabled>Semantic UI coming soon</m-tab>
-  </m-tabs>
+  </mw-tabs>
 
   <!-- Bootstrap -->
   <div data-tab="bootstrap" role="tabpanel">
@@ -21,7 +21,7 @@
         <h2 id="bootstrap" class="mar-b-none">Bootstrap<span class="mar-l-md txt-sm txt-gray-4">v4.5<m-vbar></m-vbar>72kb</span></h2>
       </m-col>
       <m-col>
-        <h2 class="mar-b-none">Mdash<span class="mar-l-md txt-sm txt-gray-4">v{{version}}<m-vbar></m-vbar>8kb</span></h2>
+        <h2 class="mar-b-none">Mweb<span class="mar-l-md txt-sm txt-gray-4">v{{version}}<m-vbar></m-vbar>8kb</span></h2>
       </m-col>
     </m-row>
 
@@ -153,7 +153,7 @@
         <h4 class="mar-b-xs">Badge (same loc, -13 chars)</h4>
         <code-sample readonly="readonly">
           <template>
-            <m-badge count="4"></m-badge>
+            <mw-badge count="4"></mw-badge>
           </template>
         </code-sample>
       </m-col>
@@ -203,7 +203,7 @@
         <h4 class="mar-b-xs">Box (-2 loc, -66 chars)</h4>
         <code-sample readonly="readonly">
           <template>
-            <m-box>Content</m-box>
+            <mw-card>Content</mw-card>
           </template>
         </code-sample>
       </m-col>
@@ -347,7 +347,7 @@
         <h4 class="mar-b-xs">Icon (-2 loc, -84 chars)</h4>
           <code-sample readonly="readonly">
             <template>
-              <m-icon name="user"></m-icon>
+              <mw-icon name="user"></mw-icon>
             </template>
           </code-sample>
       </m-col>
@@ -371,10 +371,10 @@
         <h4 class="mar-b-xs">Tabs (-4 loc, -376 chars</h4>
         <code-sample readonly="readonly">
           <template>
-            <m-tabs>
+            <mw-tabs>
               <m-tab>A</m-tab>
               <m-tab>B</m-tab>
-            </m-tabs>
+            </mw-tabs>
           </template>
         </code-sample>
       </m-col>
@@ -388,7 +388,7 @@
         <h2 id="material-web" class="mar-b-none">Material Web<span class="mar-l-md txt-sm txt-gray-4">v7.0<m-vbar></m-vbar>80kb</span></h2>
       </m-col>
       <m-col>
-        <h2 class="mar-b-none">Mdash<span class="mar-l-md txt-sm txt-gray-4">v{{version}}<m-vbar></m-vbar>8kb</span></h2>
+        <h2 class="mar-b-none">Mweb<span class="mar-l-md txt-sm txt-gray-4">v{{version}}<m-vbar></m-vbar>8kb</span></h2>
       </m-col>
     </m-row>
 
@@ -473,7 +473,7 @@
       <m-col>
         <h4 class="mar-b-xs">Removable Tag (-12 loc, -465 chars)</h4>
         <code-sample readonly="readonly">
-          <m-tag>free breakfast <button type="remove" aria-label="remove"></button></m-tag>
+          <mw-chip>free breakfast <button type="remove" aria-label="remove"></button></mw-chip>
         </code-sample>
       </m-col>
     </m-row>
@@ -514,10 +514,10 @@
         <h4 class="mar-b-xs">Tabs (-22 loc, -1,159 chars)</h4>
         <code-sample readonly="readonly">
           <template>
-            <m-tabs scrollable>
+            <mw-tabs scrollable>
               <m-tab>A</m-tab>
               <m-tab>B</m-tab>
-            </m-tabs>
+            </mw-tabs>
           </template>
         </code-sample>
       </m-col>
@@ -531,7 +531,7 @@
         <h2 id="foundation" class="mar-b-none">Zurb Foundation<span class="mar-l-md txt-sm txt-gray-4">v6.6<m-vbar></m-vbar>87kb</span></h2>
       </m-col>
       <m-col>
-        <h2 class="mar-b-none">Mdash<span class="mar-l-md txt-sm txt-gray-4">v{{version}}<m-vbar></m-vbar>8kb</span></h2>
+        <h2 class="mar-b-none">Mweb<span class="mar-l-md txt-sm txt-gray-4">v{{version}}<m-vbar></m-vbar>8kb</span></h2>
       </m-col>
     </m-row>
 
@@ -703,10 +703,10 @@
         <h4 class="mar-b-xs">Tabs (-8 loc, -377 chars)</h4>
         <code-sample readonly="readonly">
           <template>
-            <m-tabs>
+            <mw-tabs>
               <m-tab>A</m-tab>
               <m-tab>B</m-tab>
-            </m-tabs>
+            </mw-tabs>
           </template>
         </code-sample>
       </m-col>

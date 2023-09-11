@@ -1,13 +1,13 @@
 {
-  "name": "m-",
-  "description": "Mdash is a design system based on web standards. It's extremely small (see comparison chart), fast, simple, and compatible with any JavaScript framework. \n",
-  "version": "3.1.1",
-  "homepage": "https://m-docs.org",
+  "name": "mw-",
+  "description": "Material Web Freedom Version is a dependency-free single CDN bundle variation of Material Web.",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jfbrennan/mw-",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jfbrennan/m-"
+    "url": "https://github.com/jfbrennan/mw-"
   },
-  "bugs": "https://github.com/jfbrennan/m-/issues",
+  "bugs": "https://github.com/jfbrennan/mw-/issues",
   "files": [
     "/dist"
   ],
@@ -19,13 +19,12 @@
     }
   ],
   "keywords": [
-    "ui",
-    "web",
-    "css",
-    "html",
-    "frontend",
-    "webcomponents",
-    "customelements"
+    "material",
+    "material design",
+    "design system",
+    "components",
+    "web components",
+    "freedom"
   ],
   "browserslist": [
     "last 1 version",
@@ -34,11 +33,11 @@
   ],
   "scripts": {
     "watch": "nodemon --watch src --ext css,js --exec npm run build",
-    "build": "rm -r dist; mkdir dist && npm run css && npm run css:custom-properties && npm run js && npm run icons && cp -R dist/** docs/public",
-    "css": "postcss ./src/m-all.css | lightningcss --nesting --minify -o ./dist/m-.css /dev/stdin",
+    "build": "rm -r dist; mkdir dist && npm run css && npm run js",
+    "css": "postcss src/mw-all.css | lightningcss --nesting --minify -o ./dist/mw-.css /dev/stdin",
     "css:custom-properties": "cp -R src/custom-properties.css dist",
     "icons": "cp -R src/m-.woff2 dist/m-.woff2",
-    "js": "terser ./src/*.js --mangle -o ./dist/m-.js"
+    "js": "terser ./src/*.js --mangle -o ./dist/mw-.js"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.15",
@@ -50,5 +49,8 @@
     "postcss-custom-properties": "^13.3.0",
     "postcss-import": "^15.1.0",
     "terser": "^5.19.4"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }

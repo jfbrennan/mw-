@@ -1,7 +1,7 @@
 /* Base code styles */
 code,
 pre {
-  border-radius: var(--m-border-radius-md);
+  border-radius: var(--mw-border-radius-md);
   background-color: var(--m-color-gray-1);
   color: var(--m-color-red-3);
 }
@@ -14,6 +14,6 @@ code {
 /* Multi-line code */
 pre {
   margin: 0;
-  padding: var(--m-space-xs) var(--m-space-sm);
+  padding: var(--mw-space-xs) var(--mw-space-sm);
 }
 

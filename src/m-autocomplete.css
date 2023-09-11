@@ -13,4 +13,4 @@ m-autocomplete {
 }
 
 /* When paired with label */
-fieldset label + m-autocomplete { margin-top: var(--m-space-xs) }
+fieldset label + m-autocomplete { margin-top: var(--mw-space-xs) }

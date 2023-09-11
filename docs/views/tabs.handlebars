@@ -3,11 +3,30 @@
 <h2 id="demo">Demo</h2>
 <code-sample>
 <template>
-  <m-tabs role="tablist">
-    <button role="tab" aria-selected="true">A</button>
-    <button role="tab">B</button>
-    <a href="/" role="tab">C</a>
-  </m-tabs>
+  <mw-tabs ord="primary" role="tablist">
+    <button role="tab" aria-selected="true">
+      <mw-icon name="flight"></mw-icon>
+      Flights
+    </button>
+    <button role="tab">
+      <mw-icon name="luggage"></mw-icon>
+      Trips
+    </button>
+    <a href="/" role="tab">
+      <mw-icon name="explore"></mw-icon>
+      Explore
+    </a>
+  </mw-tabs>
+  <mw-tabs ord="primary" role="tablist">
+    <button role="tab" aria-selected="true">Tab</button>
+    <button role="tab">Tab</button>
+    <a href="/" role="tab">Tab</a>
+  </mw-tabs>
+  <mw-tabs ord="secondary" role="tablist">
+    <button role="tab" aria-selected="true">Tab</button>
+    <button role="tab">Tab</button>
+    <a href="/" role="tab">Tab</a>
+  </mw-tabs>
   <p class="txt-xs txt-gray-5">See <a href="#select-tab">selecting tabs</a> to learn how to select the tabs</p>
 </template>
 </code-sample>
@@ -23,7 +42,7 @@
   </thead>
   <tbody>
   <tr>
-    <td colspan="2"><code>m-tabs</code></td>
+    <td colspan="2"><code>mw-tabs</code></td>
     <td colspan="2">Custom tag</td>
     <td colspan="6"><code>button</code> or <code>a</code> children</td>
   </tr>
@@ -39,7 +58,7 @@
   </tr>
   </thead>
 </table>
-<p>For <span class="fnt-bold">m-tabs</span> only:</p>
+<p>For <span class="fnt-bold">mw-tabs</span> only:</p>
 <table layout="fixed">
   <tbody>
   <tr>
@@ -72,10 +91,10 @@
   <script>
     const selectTab = e => e.currentTarget.querySelectorAll('[role=tab]').forEach(tab => tab.ariaSelected = tab === e.target);
   </script>
-  <m-tabs onclick="selectTab(event)">
+  <mw-tabs onclick="selectTab(event)">
     <button role="tab">A</button>
     <button role="tab">B</button>
-  </m-tabs>
+  </mw-tabs>
 </code-sample>
 <p>That will select the tab, but that is not typically everything you need to do. Showing the corresponding tab panel requires a bit more.</p>
 <h4>Showing a tab panel</h4>
@@ -92,10 +111,10 @@
     }
   </script>
   <template>
-    <m-tabs onclick="switchTab(event)">
+    <mw-tabs onclick="switchTab(event)">
       <button id="a" role="tab">A</button>
       <button id="b" role="tab">B</button>
-    </m-tabs>
+    </mw-tabs>
     <div role="tabpanel" data-tab-id="a">Tab A panel</div>
     <div role="tabpanel" data-tab-id="b">Tab B panel</div>
   </template>
@@ -104,10 +123,10 @@
 <code-sample readonly="readonly">
   <template>
     <app>
-      <m-tabs onclick="{switchTab}">
+      <mw-tabs onclick="{switchTab}">
         <button id="a" aria-selected="{state.tab === 'a'}">A</button>
         <button id="b" aria-selected="{state.tab === 'b'}">B</button>
-      </m-tabs>
+      </mw-tabs>
       <div if="{state.tab === 'a'}">Tab A panel</div>
       <div if="{state.tab === 'b'}">Tab B panel</div>
 
@@ -126,10 +145,10 @@
 <p>All of the necessary ARIA attributes are here in the example below:</p>
 <code-sample readonly="readonly">
 <template>
-  <m-tabs role="tablist">
+  <mw-tabs role="tablist">
     <button id="a" aria-controls="a-panel" role="tab">A</button>
     <button id="b" aria-controls="b-panel" role="tab">B</button>
-  </m-tabs>
+  </mw-tabs>
   <div id="a-panel" role="tabpanel" aria-labelledby="a">
     This content is shown when the "a" Tab is selected.
   </div>

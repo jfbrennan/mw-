@@ -2,7 +2,7 @@ m-loader {
   display: inline-flex;
 
   &::before {
-    font-family: 'm-icons';
+    font-family: 'mw-icons';
     content: 'autorenew';
     -webkit-font-smoothing: antialiased;
   }

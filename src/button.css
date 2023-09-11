@@ -1,76 +1,150 @@
 :is(button, a[role=button]) {
   /*
-    Ordinal attribute
-    The `ord` attr is short for "ordinal number word".
-    Ordinal number words are the 10+ words used for describing the
-    precedence or importance of an item in a group, e.g. Save and Cancel buttons.
-  */
-  &[ord] {
+    Kind attribute
+    HTML buttons are untouched by default.
+    Set kind to opt-in to Mweb buttons.
+   */
+  &[kind] {
     display: inline-flex;
-    place-content: center;
-    border-radius: var(--m-border-radius-md);
+    align-items: center;
+    justify-content: center;
+    gap: var(--mw-space-xs);
+    vertical-align: middle;
+    box-sizing: border-box;
+    border: none;
+    border-radius: var(--mw-border-radius-full);
     cursor: pointer;
-    background: none;
-    font-size: var(--m-font-size-default);
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: var(--mw-font-size-sm);
     height: var(--m-input-min-height);
-    padding: var(--m-space-xs) var(--m-space-md);
-
-    /* Sibling buttons */
-    + & { margin-left: var(--m-space-sm) }
+    padding: 0 var(--mw-space-md);
 
     /* Disabled */
     &[disabled] {
       cursor: not-allowed;
-      border: 2px solid var(--m-color-disabled-bg);
       color: var(--m-color-disabled-fg);
       background-color: var(--m-color-disabled-bg);
     }
+
+    /* Optional icon */
+    &:not([kind=fab][icon]) {
+      &:has(mw-icon:first-child) {
+        padding-left: var(--mw-space-xs);
+      }
+
+      & > mw-icon {
+        font-size: var(--m-font-size-md);
+      }
+    }
+
+    /* Icon-only button */
+    &[icon]:not([kind=elevated]) {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      font-size: var(--m-font-size-lg);
+      line-height: 1;
+
+      &::before {
+        font-family: 'mw-icons';
+        content: attr(icon);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      &:is([aria-pressed="true"],[aria-pressed="mixed"]) {
+        font-variation-settings: 'FILL' 1;
+      }
+    }
+
   }
 
-  /* Primary ordinal */
-  &[ord=primary] {
-    border: 2px solid var(--m-color-primary-action);
-    background-color: var(--m-color-primary-action);
-    color: white;
+  /* Elevated kind */
+  &[kind=elevated] {
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, .2);
+    background-color: var(--mw-color-surface-container-low);
+    color: var(--mw-color-primary);
   }
 
-  /* Secondary ordinal */
-  &[ord=secondary] {
-    border: 2px solid var(--m-color-primary-action);
-    color: var(--m-color-primary-action);
+  /* Filled kind */
+  &[kind=filled] {
+    background-color: var(--mw-color-primary);
+    color: var(--mw-color-on-primary);
   }
 
-  /* Tertiary ordinal */
-  &[ord=tertiary] {
-    border: 2px solid var(--m-color-gray-7);
-    color: var(--m-color-gray-7);
+  /* Tonal kind */
+  &[kind=tonal] {
+    background-color: var(--mw-color-secondary-container);
+    color: var(--mw-color-on-secondary-container);
+  }
+
+  /* Outlined kind */
+  &[kind=outlined] {
+    background: none;
+    border: 1px solid var(--mw-color-outline);
+    color: var(--mw-color-primary);
+  }
+
+  /* Text kind */
+  &[kind=text] {
+    padding: 0 calc(var(--mw-space-md) / 2);
+    background: none;
+    color: var(--mw-color-primary);
+  }
+
+  /* Floating Action Button kind */
+  &[kind=fab] {
+    padding: var(--mw-space-sm);
+    width: 56px;
+    height: 56px;
+    margin: var(--mw-space-sm);
+    border-radius: var(--mw-corner-large);
+    font-size: var(--m-font-size-lg);
+    background-color: var(--mw-color-primary-container);
+    color: var(--mw-color-on-primary-container);
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, .2);
+
+    &[scale=sm] {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--mw-corner-medium);
+    }
+
+    &[scale=lg] {
+      width: 96px;
+      height: 96px;
+      border-radius: var(--mw-corner-extra-large);
+      font-size: 36px;
+    }
   }
 }
 
-/* Focus for all buttons */
-:is(button, a[role=button])[ord]:focus-visible, button[type=remove]:focus-visible {
+/* Focus visible for buttons */
+:is(button, a[role=button])[kind]:focus-visible, button[type=remove]:focus-visible {
   outline: 2px solid var(--m-color-focus);
   outline-offset: 0;
 }
 
 /* Link button overrides */
-a[role=button][ord] {
-  box-sizing: border-box;
-
-  &:hover { text-decoration: none }
-}
+a[role=button][kind]:hover { text-decoration: none }
 
 /* Remove button (for close, dismiss, delete use cases) */
 button[type=remove] {
   all: unset;
   display: inline-flex;
-  place-content: center;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
   cursor: pointer;
   width: var(--m-input-min-height);
   font-size: 24px;
 
   &:active { color: initial }
-  &::before { content: '×' }
+
+  &::before {
+    font-family: 'mw-icons';
+    content: 'close';
+    -webkit-font-smoothing: antialiased;
+  }
 
   /* Disabled */
   &[disabled] {
@@ -78,26 +152,3 @@ button[type=remove] {
     cursor: not-allowed;
   }
 }
-
-/* Scale */
-/*:is(button, a[role=button])[scale=sm] {*/
-/*  min-height: var(--m-target-min-size);*/
-/*  font-size: var(--m-font-size-min);*/
-/*}*/
-
-/*:is(button, a[role=button])[scale=lg] {*/
-/*  min-height: 44px;*/
-/*  font-size: var(--m-font-size-md);*/
-/*}*/
-
-/*button[type=remove][scale=sm] {*/
-/*  width: var(--m-target-min-size);*/
-/*  height: var(--m-target-min-size);*/
-/*  font-size: 14px;*/
-/*}*/
-
-/*button[type=remove][scale=lg] {*/
-/*  width: 44px;*/
-/*  height: 44px;*/
-/*  font-size: 36px;*/
-/*}*/
