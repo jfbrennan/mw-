@@ -1,16 +1,18 @@
 /* Base table styles */
 table {
   width: 100%;
-  border-collapse: collapse;
+  border: 1px solid var(--mw-color-outline);
+  border-radius: var(--mw-corner-extra-large);
+  overflow: hidden;
+  border-spacing: 0;
 
   /* Table header */
   & thead {
-    text-align: left;
-
-    & > tr { border-top: 2px solid var(--m-color-gray-3) }
+    text-align: center;
 
     & th {
-      padding: var(--mw-space-xs) var(--mw-space-md);
+      background-color: var(--mw-color-surface);
+      color: var(--mw-color-on-surface);
 
       /* Sortable columns */
       &[aria-sort] button {
@@ -26,15 +28,21 @@ table {
     }
   }
 
-  & th, & td { padding: var(--mw-space-xs) }
+  & th, & td {
+    padding: var(--mw-space-sm) var(--mw-space-md);
+    border-bottom: 1px solid var(--mw-color-outline);
+  }
+
+  & th:not(:last-of-type), & td:not(:last-of-type) {
+    border-right: 1px solid var(--mw-color-outline);
+    border-bottom: 1px solid var(--mw-color-outline);
+  }
+
+  & tbody tr:last-of-type td {
+    border-bottom: none;
+  }
 
   & td { vertical-align: top; padding: var(--mw-space-sm) var(--mw-space-md) }
-
-  & tbody > tr {
-    border-bottom: 1px solid var(--m-color-gray-3);
-
-    &:first-of-type { border-top: 1px solid var(--m-color-gray-3) }
-  }
 
   /* Table layout */
   &[layout=fixed] { table-layout: fixed }

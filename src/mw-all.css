@@ -8,7 +8,7 @@
 /*@import "headings.css";*/
 /*@import "link.css";*/
 /*@import "lists.css";*/
-/*@import "table.css";*/
+@import "table.css";
 /*@import "meter.css";*/
 /*@import "m-accordion.css";*/
 /*@import "m-alert.css";*/
@@ -21,7 +21,7 @@
 @import "dialog.css";
 @import "mw-icons.css";
 /*@import "m-dot.css";*/
-/*@import "m-container.css";*/
+@import "m-container.css";
 /*@import "m-grid.css";*/
 /*@import "m-loader.css";*/
 /*@import "m-menu.css";*/
@@ -33,4 +33,4 @@
   Needs to come after because these *explicit* rules should win
   when there's a specificity tie with the *implicit* rules of a component.
 */
-/*@import "utility-classes.css";*/
+@import "utility-classes.css";

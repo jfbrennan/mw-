@@ -242,7 +242,8 @@ body {
   margin: 0;
   height: 100vh;
   box-sizing: border-box;
-  color: var(--m-color-gray-7);
+  background-color: var(--mw-color-background);
+  color: var(--mw-color-on-background);
   font-family: 'Roboto Flex', sans-serif;
 }
 

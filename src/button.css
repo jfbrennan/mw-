@@ -27,7 +27,7 @@
     }
 
     /* Optional icon */
-    &:not([kind=fab][icon]) {
+    &:not([kind=fab], [icon]) {
       &:has(mw-icon:first-child) {
         padding-left: var(--mw-space-xs);
       }

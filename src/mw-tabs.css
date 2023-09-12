@@ -3,8 +3,8 @@ mw-tabs {
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  border-bottom: 1px solid #C4C7C5;
-  background-color: white;
+  border-bottom: 1px solid var(--mw-color-outline-variant);
+  background-color: var(--mw-color-surface);
 
   /* Ordinal */
   &[ord=primary] > :is(a, button) {
@@ -42,7 +42,7 @@ mw-tabs {
     position: relative;
     box-sizing: border-box;
     height: 48px;
-    color: #49454E;
+    color: var(--mw-color-on-surface-variant);
     font-size: var(--mw-font-size-sm);
     text-align: center;
     white-space: nowrap;
@@ -68,14 +68,14 @@ mw-tabs {
     }
 
     &[aria-selected=true] {
-      color: #6750A4;
+      color: var(--mw-color-primary);
 
-      &::after { background-color: #6750A4 }
+      &::after { background-color: var(--mw-color-primary) }
     }
 
     /* Hover state */
     &:not([disabled]):hover {
-      background-color: lightcyan;
+      background-color: var(--mw-color-on-surface);
     }
 
     /* Disabled state */

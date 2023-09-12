@@ -2,22 +2,22 @@
 
 It's [@mateial/web](https://github.com/material-components/material-web), but with more freedom! 
 
-MWeb has **no dependcies** and comes gift-wrapped in an impossibly small **??kb CDN bundle**. 
+MWeb has **no dependencies** and comes gift-wrapped in an impossibly small **??kb CDN bundle**. 
 
-To get started...
+**To get started...**
 
 copy this
 ```html
-<link href="https://unpkg.com/mw-@0.0.3/dist/mw-.css" rel="stylesheet">
-<script src="https://unpkg.com/mw-@0.0.3/dist/mw-.js" defer></script>
+<link href="https://unpkg.com/materialweb@0.0.1/dist/mw-.css" rel="stylesheet">
+<script src="https://unpkg.com/materialweb@0.0.1/dist/mw-.js" defer></script>
 ```
-paste it
+into here
 ```html
 <head>
-    <!-- here -->
+  <!-- here -->
 </head>
 ```
-and then you code
+and start coding
 ```html
 <mw-badge count="1"></mw-badge>
 ```
@@ -73,7 +73,7 @@ Bottom app bar                | ❌    | ❌
 Bottom sheet                  | ❌    | ❌
 Segmented button              | ❌    | ❌
 Card                          | 🟡    | ❌
-Data table                    | ❌    | ❌
+Data table                    | 🟡    | ❌
 Date picker                   | ❌    | ❌
 Navigation bar                | ❌    | ❌
 Navigation drawer             | ❌    | ❌

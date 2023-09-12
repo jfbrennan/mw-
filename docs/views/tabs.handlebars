@@ -44,7 +44,7 @@
   <tr>
     <td colspan="2"><code>mw-tabs</code></td>
     <td colspan="2">Custom tag</td>
-    <td colspan="6"><code>button</code> or <code>a</code> children</td>
+    <td colspan="6"><code>&lt;button&gt;</code> or <code>&lt;a&gt;</code> children</td>
   </tr>
   </tbody>
 </table>
@@ -57,20 +57,22 @@
     <th colspan="6">Description</th>
   </tr>
   </thead>
-</table>
-<p>For <span class="fnt-bold">mw-tabs</span> only:</p>
-<table layout="fixed">
   <tbody>
+  <tr>
+    <td colspan="10">
+      <div>For <span class="fnt-bold">mw-tabs</span> container</div>
+    </td>
+  </tr>
   <tr>
     <td colspan="2"><code>scrollable</code></td>
     <td colspan="2">Boolean attribute</td>
     <td colspan="6">Makes the tab list horizontally scrollable. In some cases, like flex grow, overflow doesn't happen and so the parent element will need an explicit width (try the <code>width-full</code> utility class).</td>
   </tr>
-  </tbody>
-</table>
-<p>For tab only:</p>
-<table layout="fixed">
-  <tbody>
+  <tr>
+    <td colspan="10">
+      <div>For <span class="fnt-bold">tabs</span></div>
+    </td>
+  </tr>
   <tr>
     <td colspan="2"><code>aria-selected</code></td>
     <td colspan="2">true or false</td>
@@ -86,12 +88,12 @@
 <h2 id="guidelines">Guidelines</h2>
 <h3 id="select-tab">Selecting tabs</h3>
 <h4>Selecting the tab</h4>
-<p>Setting the selected tab is handled by your app. To select a tab, set <code>aria-selected=true</code>. There are a several approaches you could take to manage this, but event delegation comparing tabs to the clicked tab is probably the simplest:</p>
+<p>Setting the selected tab is handled by your app. To select a tab, set <code>aria-selected=true</code>. There are a several approaches you could take to manage this, but using event delegation and comparing tabs to the clicked tab is probably the simplest:</p>
 <code-sample>
   <script>
     const selectTab = e => e.currentTarget.querySelectorAll('[role=tab]').forEach(tab => tab.ariaSelected = tab === e.target);
   </script>
-  <mw-tabs onclick="selectTab(event)">
+  <mw-tabs onclick="selectTab(event)" ord="secondary">
     <button role="tab">A</button>
     <button role="tab">B</button>
   </mw-tabs>
@@ -111,7 +113,7 @@
     }
   </script>
   <template>
-    <mw-tabs onclick="switchTab(event)">
+    <mw-tabs onclick="switchTab(event)" ord="secondary">
       <button id="a" role="tab">A</button>
       <button id="b" role="tab">B</button>
     </mw-tabs>
@@ -123,7 +125,7 @@
 <code-sample readonly="readonly">
   <template>
     <app>
-      <mw-tabs onclick="{switchTab}">
+      <mw-tabs onclick="{switchTab}" ord="secondary">
         <button id="a" aria-selected="{state.tab === 'a'}">A</button>
         <button id="b" aria-selected="{state.tab === 'b'}">B</button>
       </mw-tabs>
@@ -145,7 +147,7 @@
 <p>All of the necessary ARIA attributes are here in the example below:</p>
 <code-sample readonly="readonly">
 <template>
-  <mw-tabs role="tablist">
+  <mw-tabs role="tablist" ord="secondary">
     <button id="a" aria-controls="a-panel" role="tab">A</button>
     <button id="b" aria-controls="b-panel" role="tab">B</button>
   </mw-tabs>

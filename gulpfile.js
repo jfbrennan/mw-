@@ -8,7 +8,7 @@ function versionBump(cb) {
     // Update version mentioned in ./README.md
     const pkg = require('./package');
     gulp.src('./README.md', {base: './'})
-      .pipe(replace(/(https:\/\/unpkg\.com\/mw-@)(.*)(\/dist\/.*)/g, (match, p1, p2, p3) => p1 + pkg.version + p3))
+      .pipe(replace(/(https:\/\/unpkg\.com\/materialweb@)(.*)(\/dist\/.*)/g, (match, p1, p2, p3) => p1 + pkg.version + p3))
       .pipe(gulp.dest('./'));
 
     cb(err);
@@ -32,7 +32,7 @@ function publishToNPM(cb) {
   const pkg = require('./package');
   exec('npm publish --access=public', function (err, stdout, stderr) {
     if (!err) {
-      console.log(`Version ${pkg.version} has been successfully built and published. You can now zip /docs and deploy to AWS.`)
+      console.log(`${pkg.name}@${pkg.version} has been successfully built and published.`)
     }
     cb(err);
   });

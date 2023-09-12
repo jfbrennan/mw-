@@ -8,7 +8,7 @@ const app = express();
 
 // Set some locals
 app.locals.version = pkg.version;
-app.locals.prodCdnUrl = `https://unpkg.com/mw-@${pkg.version}/dist/mw-`;
+app.locals.prodCdnUrl = `https://unpkg.com/${pkg.name}@${pkg.version}/dist/mw-`;
 app.locals.localUrl = process.env.NODE_ENV === 'development' ? '/mw-' : app.locals.prodCdnUrl;
 
 // Set up template engine

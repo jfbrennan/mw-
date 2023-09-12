@@ -1,6 +1,6 @@
 {
   "name": "materialweb",
-  "description": "Material Web Freedom Version is a dependency-free single CDN bundle variation of Material Web.",
+  "description": "MaterialWeb aka MWeb aka The Freedom Version is a complete, dependency-free CDN version of Material Web 3.",
   "version": "0.0.3",
   "homepage": "https://github.com/jfbrennan/mw-",
   "repository": {
@@ -33,10 +33,8 @@
   ],
   "scripts": {
     "watch": "nodemon --watch src --ext css,js --exec npm run build",
-    "build": "rm -r dist; mkdir dist && npm run css && npm run js",
+    "build": "rm -r dist; mkdir dist && npm run css && cp -R dist/** docs/public",
     "css": "postcss src/mw-all.css | lightningcss --nesting --minify -o ./dist/mw-.css /dev/stdin",
-    "css:custom-properties": "cp -R src/custom-properties.css dist",
-    "icons": "cp -R src/m-.woff2 dist/m-.woff2",
     "js": "terser ./src/*.js --mangle -o ./dist/mw-.js"
   },
   "devDependencies": {
@@ -46,11 +44,7 @@
     "lightningcss-cli": "^1.21.7",
     "postcss": "^8.4.29",
     "postcss-cli": "^10.1.0",
-    "postcss-custom-properties": "^13.3.0",
     "postcss-import": "^15.1.0",
     "terser": "^5.19.4"
-  },
-  "dependencies": {
-    "express": "^4.18.2"
   }
 }

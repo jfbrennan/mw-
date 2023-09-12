@@ -83,6 +83,7 @@
 
 :root {
   /* Colors */
+  /* See https://github.com/material-components/material-web/blob/main/tokens/v0_172/_md-ref-palette.scss */
   --mw-color-black: #000;
 
   --mw-color-error0: #000;
@@ -184,6 +185,7 @@
 
 
   /* Aliases */
+  /* See https://github.com/material-components/material-web/blob/main/tokens/v0_172/_md-sys-color.scss */
 
   /* Primary */
   --mw-color-primary: var(--mw-color-primary40);
@@ -262,7 +264,7 @@
     --mw-color-on-surface-variant: var(--mw-color-neutral-variant80);
     --mw-color-inverse-surface: var(--mw-color-neutral90);
     --mw-color-inverse-on-surface: var(--mw-color-neutral20);
-    --mw-color-background: var(--mw-color-neutral16);
+    --mw-color-background: var(--mw-color-neutral6);
     --mw-color-on-background: var(--mw-color-neutral90);
     --mw-color-error: var(--mw-color-error80);
     --mw-color-error-container: var(--mw-color-error30);
