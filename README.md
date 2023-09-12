@@ -1,8 +1,8 @@
 # MWeb
 
-It's [@mateial/web](https://github.com/material-components/material-web), but with more freedom! 
+<img src="https://i.imgflip.com/7ytoq2.jpg">
 
-MWeb has **no dependencies** and comes gift-wrapped in an impossibly small **??kb CDN bundle**. 
+It's (mostly) [@mateial/web](https://github.com/material-components/material-web), but with **no dependencies** and comes gift-wrapped in an impossibly small **??kb CDN bundle**. 
 
 **To get started...**
 
