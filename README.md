@@ -2,7 +2,7 @@
 
 <img src="https://i.imgflip.com/7ytoq2.jpg">
 
-It's (mostly) [@mateial/web](https://github.com/material-components/material-web), but with **no dependencies** and comes gift-wrapped in an impossibly small **??kb CDN bundle**. 
+It's (mostly) [@material/web](https://github.com/material-components/material-web), but with **no dependencies** and comes gift-wrapped in an impossibly small **??kb CDN bundle**. 
 
 **To get started...**
 
