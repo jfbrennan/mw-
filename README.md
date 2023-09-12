@@ -28,7 +28,7 @@ Documentation is coming soon.
 Mweb was created because Material Web is not and will not be available to developers as a complete dependency-free package over CDN. Each component file has to be included individually or imported with JavaScript and bundled with a tool like Webpack. This falls short of the promise of Web Components.
 
 There are other differences here too relating to Mweb's adherence to the [TAC methodology](https://jordanbrennan.hashnode.dev/tac-a-new-css-methodology), which, among other things, means Mweb leverages existing HTML elements when possible. In contrast, Material Web creates its own Custom Elements abstractions for fundamental HTML elements like `<button>`, `<input>`, and `<dialog>`. That pattern has several consequences:
-- It separates the developer from native HTML. This means common HTML knowledge is no longer useful, or at least immediately useful...
+- It separates the developer from native HTML. This means common HTML knowledge is no longer useful, or at least not immediately useful...
 - The developer now has to stop and learn if native HTML features like button's `type="reset"` or input's `autofocus` is available in Material, and if so, how to you use them. 
 - The answer from libraries that do this is almost always that it's same interface as HTML, i.e. `<md-button>` defines `type="reset"` too and the implementation is often just a pass-through. 
   - This is extremely wasteful for developers having to relearn and trust these mostly-the-same interfaces, e.g. unlike HTML where `button` is button's default type, Material surprisingly sets `submit` as the default 
